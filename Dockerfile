@@ -1,3 +1,5 @@
-FROM tomcat:8.0
-COPY target/products-1.war /usr/local/tomcat/webapps
+FROM tomcat:9.0
+WORKDIR /usr/local/tomcat/webapps
+COPY target/products-1.jar /usr/local/tomcat/webapps/app.jar
 EXPOSE 8080
+CMD ["java","-jar","app.jar"]

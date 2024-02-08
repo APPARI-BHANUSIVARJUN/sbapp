@@ -1,5 +1,3 @@
-FROM tomcat:9.0
-WORKDIR /usr/local/tomcat/webapps
-COPY target/products-0.0.1-SNAPSHOT.war /usr/local/tomact/webapps/app.war
+FROM tomcat:8.0
+COPY target/products-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps
 EXPOSE 8080
-CMD ["java","-war","app.war"]
